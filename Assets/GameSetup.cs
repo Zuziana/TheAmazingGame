@@ -4,10 +4,18 @@ using System.Collections;
 public class GameSetup : MonoBehaviour {
 	public Camera mainCamera;
 
+	public Transform player1;
+	public Transform player2;
+
 	public BoxCollider2D topWall;
 	public BoxCollider2D bottomWall;
 	public BoxCollider2D leftWall;
 	public BoxCollider2D rightWall;
+
+	void Start () {
+		player1.position = new Vector2 (mainCamera.ScreenToWorldPoint(new Vector3(75f, 0f, 0f)).x, mainCamera.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2, 0f)).y );
+		player2.position = new Vector2 (mainCamera.ScreenToWorldPoint(new Vector3(Screen.width - 75f, 0f, 0f)).x, mainCamera.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2, 0f)).y );
+	}
 
 	// Update is called once per frame
 	void Update () {

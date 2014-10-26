@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Player1Control : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 	Vector2 newVector;
 	
 	public KeyCode moveUp;
@@ -19,7 +19,7 @@ public class Player1Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		newVector = rigidbody2D.velocity;
-
+		
 		if(Input.GetKey(moveUp)){
 			newVector.y = newVector.y + this.acceleration;
 		}
@@ -27,12 +27,12 @@ public class Player1Control : MonoBehaviour {
 			newVector.y = newVector.y - this.acceleration;
 		}
 		else if(Input.GetKey(moveLeft)){
-			newVector.x = newVector.x - this.acceleration;
+			// newVector.x = newVector.x - this.acceleration;
 		}
 		else if(Input.GetKey(moveRight)){
-			newVector.x = newVector.x + this.acceleration;
+			// newVector.x = newVector.x + this.acceleration;
 		}
-
+		
 		rigidbody2D.velocity = newVector;
 	}
 }

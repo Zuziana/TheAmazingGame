@@ -12,12 +12,17 @@ public class GameSetup : MonoBehaviour {
 	public BoxCollider2D leftWall;
 	public BoxCollider2D rightWall;
 
+	/**
+	 * Runs at start
+	 **/
 	void Start () {
 		player1.position = new Vector2 (mainCamera.ScreenToWorldPoint(new Vector3(75f, 0f, 0f)).x, mainCamera.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2, 0f)).y );
 		player2.position = new Vector2 (mainCamera.ScreenToWorldPoint(new Vector3(Screen.width - 75f, 0f, 0f)).x, mainCamera.ScreenToWorldPoint(new Vector3(0f, Screen.height / 2, 0f)).y );
 	}
 
-	// Update is called once per frame
+	/**
+	 * Runs every frame
+	 **/
 	void Update () {
 		// Sizes
 		topWall.size = new Vector2(mainCamera.ScreenToWorldPoint(new Vector3(Screen.width * 2f, 0f, 0f)).x, 1f); 
